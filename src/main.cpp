@@ -39,6 +39,13 @@ string hasData(string s) {
 
 int main(int argc, char *argv[]) {
 
+  if (argc!=7) {
+    cout << "Kp, Ki and Kd parameters expected for both steering and throttle PID controllers\n";
+    cout << "Try rerunning with...\n";
+    cout << "./pid 0.1 0 4 3 0 2\n";
+    exit(0);
+  }
+
   uWS::Hub h;
 
   PID pid_steering, pid_throttle;
